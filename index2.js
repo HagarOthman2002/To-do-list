@@ -81,6 +81,12 @@ function enableEdit(taskTextElement, editBtn) {
   editBtn.onclick = function () {
     saveEdit(inputField, taskTextElement, editBtn);
   };
+
+  inputField.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      saveEdit(inputField, taskTextElement, editBtn);
+    }
+  });
 }
 
 function saveEdit(inputField, taskTextElement, editBtn) {
